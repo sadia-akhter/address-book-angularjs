@@ -1,0 +1,29 @@
+1. Install angularjs in address-book directory
+
+	$ bower install angular
+
+2. Install Bootstrap in address-book directory
+
+	$ bower install bootstrap
+
+3. Install Node.js to use as a simple server
+
+	a) intall Node.js
+
+	b) from Node.js installation directory (in my case, "/usr/local/bin") , run the following command
+
+		$ npm install connect
+
+	c) copy server.js to the Node.js installation directory (in my case, "/usr/local/bin")
+
+		$ sudo cp server.js /usr/local/bin
+
+	d) edit server.js and change the path to address-book directory.
+
+	e) run the server from the Node.js installation directory (in my case, "/usr/local/bin")
+
+		$ node server.js
+
+	f) test the server by opening a browser and type the following url:
+
+		http://localhost:5000/app.html
