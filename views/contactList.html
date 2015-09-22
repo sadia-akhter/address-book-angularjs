@@ -1,0 +1,14 @@
+<div class="col-xs-4" ng-controller="contactListCtrl">
+   <div class="panel">
+      <table class="table">
+         <thead>
+            <th class="text-center">All Contacts</th>
+         </thead>
+         <tbody>
+            <tr ng-repeat="contact in contacts">
+               <td>{{contact.firstName + " " + contact.lastName}}</td>
+            </tr>
+         </tbody>
+      </table>                  
+   </div>
+</div>

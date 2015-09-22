@@ -25,7 +25,7 @@ angular.module('addressBook')
 			urls: ['www.sherlock.com'], 
 			addresses: [
 				{
-					street: '22B Baker Street',
+					street: '221B Baker Street',
 					apt: '',
 					city: 'London',
 					state: '',
