@@ -1,3 +1,10 @@
+About:
+
+This project is a simple web-based Address Book application written in Angular.js.
+
+
+Setup:
+
 1. Install angularjs in address-book directory
 
 	$ bower install angular
