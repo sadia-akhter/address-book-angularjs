@@ -2,11 +2,13 @@
    <div class="panel">
       <table class="table">
          <thead>
+            <th></th>
             <th class="text-center">All Contacts</th>
+            <th class="text-right"><span class="glyphicon glyphicon-plus"></span></th>
          </thead>
          <tbody>
-            <tr ng-repeat="contact in contacts">
-               <td>{{contact.firstName + " " + contact.lastName}}</td>
+            <tr ng-repeat="contact in contacts" >
+               <td colspan="3">{{contact.firstName + " " + contact.lastName}}</td>
             </tr>
          </tbody>
       </table>                  

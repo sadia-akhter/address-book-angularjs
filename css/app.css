@@ -1,3 +1,7 @@
 body {
 	margin-top: 75px;
 }
+
+.borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
+    border: none;
+}
