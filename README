@@ -13,7 +13,10 @@ Setup:
 
 	$ bower install bootstrap
 
-3. Install Node.js to use as a simple server
+3. Install ngStorage module in address-book directory
+	$ bower install ngstorage
+
+4. Install Node.js to use as a simple server
 
 	a) intall Node.js
 
