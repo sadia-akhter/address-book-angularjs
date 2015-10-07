@@ -7,8 +7,8 @@ angular.module('contacts', [])
             id: 1, 
             firstName: 'Harry', 
             lastName: 'Steward', 
-            phones: [''], 
-            emails: ['hpotter@domain.com'], 
+            phone: '', 
+            email: 'hpotter@domain.com', 
             urls: ['www.harrypotter.com'], 
             address: {
                street: '4 Privet Drive, Little Whinging',
@@ -23,8 +23,8 @@ angular.module('contacts', [])
             id: 2,
             firstName: 'Sherlock', 
             lastName: 'Holmes', 
-            phones: [], 
-            emails: ['sholmes@domain.com'], 
+            phone: '', 
+            email: 'sholmes@domain.com', 
             urls: ['www.sherlock.com'], 
             address: {
             street: '221B Baker Street',
@@ -39,8 +39,8 @@ angular.module('contacts', [])
             id: 3,
             firstName: 'Robert', 
             lastName: 'Langdon', 
-            phones: ['6174951000'], 
-            emails: ['rlangon@domain.com'], 
+            phone: '6174951000', 
+            email: 'rlangon@domain.com', 
             urls: ['www.symbology.com'], 
             address: {
                street: '86 Brattle Street',
@@ -55,8 +55,8 @@ angular.module('contacts', [])
             id: 4, 
             firstName: 'Harry', 
             lastName: 'Potter', 
-            phones: [''], 
-            emails: ['hpotter@domain.com'], 
+            phone: '', 
+            email: 'hpotter@domain.com', 
             urls: ['www.harrypotter.com'], 
             address: {
                street: '4 Privet Drive, Little Whinging',
