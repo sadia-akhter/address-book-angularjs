@@ -7,7 +7,7 @@
             <th class="text-right"><span class="glyphicon glyphicon-plus"></span></th>
          </thead>
          <tbody>
-            <tr ng-repeat="contact in contacts | orderBy: ['firstName', 'lastName']" >
+            <tr ng-repeat="contact in contacts" ng-class="getContactClass(contact)" ng-click="selectContact(contact)" >
                <td colspan="3">{{contact.firstName + " " + contact.lastName }}</td>
             </tr>
          </tbody>

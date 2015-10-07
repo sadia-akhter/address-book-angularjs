@@ -1,1 +1,1 @@
-angular.module('addressBook', ['ngStorage']);
+angular.module('addressBook', ['ngStorage', 'contacts']);
