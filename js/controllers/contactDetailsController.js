@@ -4,6 +4,16 @@ angular.module('addressBook')
 
          $scope.contact = contacts.getSelectedContact();
 
+         $scope.$watch(
+            function () {
+               return contacts.getSelectedContact();
+            },
+            function (newContact, oldContact) {
+               if (newContact != oldContact) {
+                  $scope.contact = newContact;
+               }
+            });
+
 
          $scope.discardNewContact = function () {
             console.log("cancel: ");
@@ -22,3 +32,4 @@ angular.module('addressBook')
          }
       }
    ]);
+
