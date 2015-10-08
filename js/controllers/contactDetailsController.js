@@ -14,6 +14,12 @@ angular.module('addressBook')
                }
             });
 
+         $scope.editContact = function () {
+            console.log('edit: ');
+            var contact = contacts.getSelectedContact();
+            console.log(contact);
+            // TODO: change partial view from contactDetails to contactEdit
+         };
 
          $scope.discardNewContact = function () {
             console.log("cancel: ");
@@ -29,7 +35,6 @@ angular.module('addressBook')
                console.dir($scope.newContact);
                $scope.newContact = null;
             }
-         }
+         };
       }
    ]);
-
