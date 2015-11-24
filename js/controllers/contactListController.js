@@ -6,6 +6,17 @@ angular.module('addressBook')
          $scope.contacts = contacts.getContacts();
          $scope.selectedContact = contacts.getSelectedContact();
 
+
+         $scope.$watch(
+            function () {
+               return contacts.getSelectedContact();
+            },
+            function (newContact, oldContact) {
+               if (newContact != oldContact) {
+                  $scope.selectedContact = contacts.getSelectedContact();
+               }
+            });
+
          $scope.getContactClass = function (contact) {
             return contact === $scope.selectedContact ? contactActiveClass : '';
          };
@@ -14,5 +25,9 @@ angular.module('addressBook')
             $scope.selectedContact = contact;
             contacts.setSelectedContact(contact);
          };
+
+         $scope.addNewContact = function () {
+           contacts.setContactState("new");
+         }
       }
    ]);
