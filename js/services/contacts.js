@@ -4,7 +4,6 @@ angular.module('contacts', [])
 
       $http.get('/contacts.json').success(function(data) {
           $localStorage.contacts = data;
-          console.log($localStorage.contacts);
       });
 
       var lastId = 0;
@@ -72,7 +71,6 @@ angular.module('contacts', [])
 
          deleteContact: function (contact) {
            var index = this.findContact(contact);
-           console.log('index: ' + index);
            if (index >= 0) {
              $localStorage.contacts.splice(index, 1);
              var newLength = $localStorage.contacts.length;
@@ -87,6 +85,10 @@ angular.module('contacts', [])
              }
            }
            return -1;
+         },
+
+         getContactListSize: function() {
+           return $localStorage.contacts.length;
          }
       };
    }])

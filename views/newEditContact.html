@@ -1,5 +1,5 @@
-<div class="col-xs-7">
-   <div class="panel" ng-controller="contactDetailsCtrl">
+<div class="col-xs-7" ng-controller="contactDetailsCtrl">
+   <div class="panel" ng-show="visible">
       <h3>{{contactTitle}}</h3>
       <form name="contactDetailsForm" novalidate>
          <div class="form-group">
@@ -76,7 +76,6 @@
             <button class="btn btn-success" ng-click="saveNewContact()">Save</button>
              <button class="btn btn-default" ng-click="cancelContact()">Cancel</button>
          </div>
-
       </form>
    </div>
 </div>
