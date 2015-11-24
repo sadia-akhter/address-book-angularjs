@@ -2,74 +2,17 @@ angular.module('contacts', [])
    .factory('contacts', ['$localStorage', '$filter', '$http',
       function ($localStorage, $filter, $http) {
 
-      $localStorage.contacts = [
-         {
-            id: 1,
-            firstName: 'Harry',
-            lastName: 'Steward',
-            phone: '',
-            email: 'hpotter@domain.com',
-            urls: ['www.harrypotter.com'],
-            address: {
-               street: '4 Privet Drive, Little Whinging',
-               street2: 'The cupboard under the stairs',
-               city: 'Surrey',
-               state: '',
-               zip: '',
-               country: 'UK'
-            }
-         },
-         {
-            id: 2,
-            firstName: 'Sherlock',
-            lastName: 'Holmes',
-            phone: '',
-            email: 'sholmes@domain.com',
-            urls: ['www.sherlock.com'],
-            address: {
-            street: '221B Baker Street',
-            street2: '',
-            city: 'London',
-            state: '',
-            zip: 'NW1 6XE',
-            country: 'UK'
-            }
-         },
-         {
-            id: 3,
-            firstName: 'Robert',
-            lastName: 'Langdon',
-            phone: '6174951000',
-            email: 'rlangon@domain.com',
-            urls: ['www.symbology.com'],
-            address: {
-               street: '86 Brattle Street',
-               street2: 'Langdon Residence',
-               city: 'Cambridge',
-               state: 'MA',
-               zip: '02138',
-               country: 'USA'
-            }
-         },
-         {
-            id: 4,
-            firstName: 'Harry',
-            lastName: 'Potter',
-            phone: '',
-            email: 'hpotter@domain.com',
-            urls: ['www.harrypotter.com'],
-            address: {
-               street: '4 Privet Drive, Little Whinging',
-               street2: 'The cupboard under the stairs',
-               city: 'Surrey',
-               state: '',
-               zip: '',
-               country: 'UK'
-            }
-         }
-      ];
+      $http.get('/contacts.json').success(function(data) {
+          $localStorage.contacts = data;
+          console.log($localStorage.contacts);
+      });
 
-      var lastId = 4;
+      var lastId = 0;
+      for(var i = 0; i < $localStorage.contacts.length; i++) {
+        if (lastId < $localStorage.contacts[i].id) {
+          lastId = $localStorage.contacts[i].id;
+        }
+      }
 
       $localStorage.contacts = $filter('orderBy')($localStorage.contacts, ['firstName', 'lastName']);
       $localStorage.selectedContact = $localStorage.contacts.length && $localStorage.contacts[0];
@@ -128,12 +71,22 @@ angular.module('contacts', [])
          },
 
          deleteContact: function (contact) {
-           var index = $localStorage.contacts.indexOf(contact);
+           var index = this.findContact(contact);
+           console.log('index: ' + index);
            if (index >= 0) {
              $localStorage.contacts.splice(index, 1);
              var newLength = $localStorage.contacts.length;
              $localStorage.selectedContact = newLength && $localStorage.contacts[(index % newLength)];
            }
+         },
+
+         findContact: function(contact) {
+           for(var i = 0; i < $localStorage.contacts.length; i++) {
+             if (contact.id == $localStorage.contacts[i].id) {
+               return i;
+             }
+           }
+           return -1;
          }
       };
    }])

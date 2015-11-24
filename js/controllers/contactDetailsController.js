@@ -61,21 +61,17 @@ angular.module('addressBook')
 
 
          $scope.saveContact = function () {
-               console.log('save');
                contacts.saveContact($scope.contact);
                $scope.cancelContact();
                $scope.confirmDelete = false;
          };
 
          $scope.deleteContact = function () {
-           console.log('delete');
            $scope.confirmDelete = true;
          }
 
          $scope.confirmDeleteContact = function () {
-           console.log('confirm delete');
            var contact = contacts.getSelectedContact();
-//           console.log(contact);
            contacts.deleteContact(contact);
            $scope.confirmDelete = false;
 
