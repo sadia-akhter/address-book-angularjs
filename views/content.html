@@ -1,13 +1,14 @@
 <div ng-controller="appContlr">
-  <div ng-include="'views/contactList.html'"></div>
-  <div ng-switch="contactState">
-    <div ng-switch-when="detail">
-      <div ng-include="'views/viewContact.html'"></div>
-    </div>
-    <div ng-switch-when="edit">
-      <div ng-include="'views/newEditContact.html'"></div>
-    </div>
-    <div ng-switch-when="new">
-    <div ng-include="'views/newEditContact.html'"></div>
-  </div>
+   <div ng-include="'views/contactList.html'"></div>
+   <div ng-switch="contactState">
+      <div ng-switch-when="detail">
+         <div ng-include="'views/viewContact.html'"></div>
+      </div>
+      <div ng-switch-when="edit">
+         <div ng-include="'views/newEditContact.html'"></div>
+      </div>
+      <div ng-switch-when="new">
+         <div ng-include="'views/newEditContact.html'"></div>
+      </div>
+   </div>
 </div>
