@@ -1,11 +1,15 @@
 body {
-	margin-top: 75px;
+   margin-top: 75px;
 }
 
 .borderless tbody tr td, .borderless tbody tr th, .borderless thead tr th {
-	border: none;
+   border: none;
 }
 
 .valign-middle {
-	vertical-align: middle;
+   vertical-align: middle;
+}
+
+.make_cursor {
+   cursor: pointer;
 }
